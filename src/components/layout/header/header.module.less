@@ -36,6 +36,10 @@
 }
 
 .title {
+    padding-left: 8rem;
+    @media @mobile {
+        padding: @padding-zero @padding-small;
+    }
     h4 {
         margin: @margin-zero;
         padding: @padding-zero @padding-small;
@@ -84,10 +88,12 @@
         margin: @margin-zero @margin-medium;
         padding: @padding-zero;
         @media @mobile {
+            flex-direction: column;
             margin-top: @margin-small;
         }
+        text-align: center;
         li {
-            margin: @margin-zero @margin-small;
+            margin: @margin-zero @margin-medium;
             a {
                 text-transform: uppercase;
                 transition: @transition-time color;
@@ -95,6 +101,7 @@
                     cursor: pointer;
                     color: @theme-title;
                 }
+                
             }
         }
     }

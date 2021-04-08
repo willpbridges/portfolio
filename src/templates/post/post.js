@@ -7,7 +7,6 @@ import SEO from '../../components/seo'
 import Heading from './heading'
 import ArticleHeading from './article-heading'
 import Article from './article'
-import Comments from './comments'
 import Share from './share'
 import SuggestedPosts from './suggested-posts'
 import Config from '../../../config'
@@ -53,16 +52,7 @@ const Post = ({ data, pageContext }) => {
             translations={translations}
           />
           <Article html={html} />
-          <Share
-            pageCanonicalUrl={canonicalUrl}
-            title={title}
-            description={excerpt}
-            tags={tags}
-            coverUrl={coverUrl}
-          />
         </div>
-        <SuggestedPosts posts={suggestedPosts} />
-        <Comments pageCanonicalUrl={canonicalUrl} pageId={title} />
       </div>
     </Layout>
   )

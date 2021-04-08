@@ -9,6 +9,35 @@
     }
 }
 
+.circularPortrait {
+    position: relative;
+    width: 30%;
+    box-sizing: border-box;
+    margin-right: auto;
+    margin-bottom: auto;
+    border: 1px solid @theme-title;
+    overflow: hidden;
+    border-radius: 50%;
+  }
+  
+.circularPortrait img {
+    width: 100%;
+    height: auto;
+}
+
+.companyLogo {
+    position: relative;
+    width: 20%;
+    box-sizing: border-box;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+.companyLogo img {
+    width: 100%;
+    height: auto;
+}
+
 .photo {
     width: 30%;
     box-sizing: border-box;
@@ -36,6 +65,12 @@
     }
     h2, p {
         padding-left: @padding-medium;
+    }
+    h1 {
+        font-size: 44px;
+    }
+    p {
+        font-size: 22px;
     }
     @media @mobile {
         width: 100%;

@@ -38,7 +38,6 @@ https://lgcolella.github.io/gatsby-starter-developer-blog/
     - Archive
     - Various available icon sets: Material Design, Font Awesome, Ionicons, Typicons, Github Octicons, Feather
     - Social share buttons
-    - Comments (Disqus)
     - RSS Feed
     - Favicon
     - Web App Manifest (manifest.json)

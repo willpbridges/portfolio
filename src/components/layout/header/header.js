@@ -6,6 +6,7 @@ import useEvent from '../../hooks/useEvent'
 import style from './header.module.less'
 import Config from '../../../../config'
 import Utils from '../../../utils'
+import resume from '../../../static/resume.pdf'
 
 const Header = () => {
   const [isMenuCollapsed, setMenuCollapsed] = useState(false)
@@ -32,7 +33,7 @@ const Header = () => {
     >
       <div className={style.titleContainer}>
         <div className={style.title}>
-          <Link to={Utils.resolvePageUrl(Config.pages.home)}>
+          <Link to={Config.pages.home}>
             <h4>{Config.siteTitle}</h4>
             <p
               className={
@@ -61,13 +62,19 @@ const Header = () => {
       >
         <ul>
           <li>
-            <Link to={Utils.resolvePageUrl(Config.pages.home)}>Home</Link>
+            <Link to={Config.pages.home}>Home</Link>
           </li>
           <li>
-            <Link to={Utils.resolvePageUrl(Config.pages.tag)}>Tags</Link>
+            <Link to={Utils.resolvePageUrl(Config.pages.games)}>Games</Link>
+          </li>
+          <li>
+            <Link to={Utils.resolvePageUrl(Config.pages.projects)}>Other Projects</Link>
           </li>
           <li>
             <Link to={Utils.resolvePageUrl(Config.pages.about)}>About</Link>
+          </li>
+          <li>
+            <a href={resume}>RESUME</a>
           </li>
         </ul>
         <ul>
@@ -88,11 +95,6 @@ const Header = () => {
             >
               <FaLinkedin size="30" />
             </a>
-          </li>
-          <li>
-            <Link to={Utils.resolveUrl(Config.social.rss)}>
-              <FaRss size="30" />
-            </Link>
           </li>
         </ul>
       </div>

@@ -29,7 +29,6 @@ const PostList = ({ posts }) => (
               <h2>{title}</h2>
               <p>{excerpt}</p>
             </Link>
-            <TagList tags={tags} />
           </div>
         </div>
       )

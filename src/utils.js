@@ -9,6 +9,7 @@ const Utils = {
   resolveUrl: (...paths) => {
     return paths.reduce((resolvedUrl, path) => {
       let urlPath = path.toString().trim()
+      console.log(urlPath);
       if (urlPath)
         resolvedUrl +=
           (resolvedUrl === '' ? '' : '/') + urlPath.replace(/^\/|\/$/g, '')
@@ -23,7 +24,7 @@ const Utils = {
    */
   resolvePageUrl: (...path) => {
     let resolvedUrl = Utils.resolveUrl(...path)
-    return resolvedUrl + '/'
+    return '/' + resolvedUrl + '/'
   },
   /**
    * Get an ordered list of suggested posts for a single post.

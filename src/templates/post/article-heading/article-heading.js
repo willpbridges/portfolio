@@ -12,35 +12,6 @@ const ArticleHeading = ({ excerpt, date, time, translations }) => (
     <div className={style.excerpt}>
       <p>{excerpt}</p>
     </div>
-    <label>
-      <strong>
-        <FaRegCalendarAlt /> Date:{' '}
-      </strong>
-      <span>{date}</span>
-    </label>
-    <label>
-      <strong>
-        <FaRegClock /> Time to read:{' '}
-      </strong>
-      <span>{time}m</span>
-    </label>
-    {translations ? (
-      <label>
-        <strong>
-          <MdTranslate /> Translated in:{' '}
-        </strong>
-        {translations
-          .sort((translationA, translationB) =>
-            translationA.hreflang < translationB.hreflang ? -1 : 1
-          )
-          .map(({ hreflang, path }, index) => (
-            <span key={hreflang}>
-              <Link to={path}>{hreflangMap[hreflang]}</Link>
-              {index !== translations.length - 1 ? ', ' : null}
-            </span>
-          ))}
-      </label>
-    ) : null}
   </div>
 )
 

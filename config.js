@@ -1,26 +1,36 @@
 
 module.exports = {
   pathPrefix: '/gatsby-starter-developer-blog',
-  siteUrl: 'https://lgcolella.github.io',
-  siteTitle: 'Luigi Colella',
-  siteDescription: 'Logbook of a software developer',
-  author: 'lcolella',
+  siteUrl: 'https://willbridgesgames.com',
+  siteTitle: 'Will Bridges',
+  siteDescription: 'Programmer and Game Designer',
+  author: 'willbridges',
   postsForArchivePage: 3,
   defaultLanguage: 'en',
-  disqusScript: 'https://luigi-colella.disqus.com/embed.js',
   pages: {
     home: '/',
+    games: '/games/',
+    projects: '/projects/',
     blog: 'blog',
-    about: 'about',
+    about: '/about/',
     tag: 'tag',
     archive: 'archive'
   },
   social: {
-    github: 'https://github.com/lgcolella',
-    linkedin: '',
-    rss: '/rss.xml'
+    github: 'https://github.com/willpbridges',
+    linkedin: 'https://www.linkedin.com/in/willpbridges/',
+    rss: ''
   },
   tags: {
+    frontpage: {
+      description: "projects on my front page"
+    },
+    games: {
+      description: "game projects"
+    },
+    projects: {
+      description: "CS projects"
+    },
     angular: {
       description: 'Angular is an open source web application platform.'
     },

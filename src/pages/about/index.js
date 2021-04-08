@@ -16,16 +16,21 @@ export const aboutPropTypes = {
         fluid: PropTypes.object.isRequired,
       }).isRequired,
     }).isRequired,
-    flagIt: PropTypes.shape({
+    wayfair: PropTypes.shape({
       childImageSharp: PropTypes.shape({
-        fixed: PropTypes.object.isRequired,
-      }),
-    }),
-    flagEn: PropTypes.shape({
+        fluid: PropTypes.object.isRequired,
+      }).isRequired,
+    }).isRequired,
+    nugdc: PropTypes.shape({
       childImageSharp: PropTypes.shape({
-        fixed: PropTypes.object.isRequired,
-      }),
-    }),
+        fluid: PropTypes.object.isRequired,
+      }).isRequired,
+    }).isRequired,
+    hof: PropTypes.shape({
+      childImageSharp: PropTypes.shape({
+        fluid: PropTypes.object.isRequired,
+      }).isRequired,
+    }).isRequired,
     skillIcons: PropTypes.object.isRequired,
     toolIcons: PropTypes.object.isRequired,
   }),
@@ -35,7 +40,7 @@ class About extends React.Component {
   static propTypes = aboutPropTypes
 
   render() {
-    let { profilePhoto, flagIt, skillIcons, toolIcons } = this.props.data
+    let { profilePhoto, wayfair, nugdc, hof } = this.props.data
     return (
       <Layout>
         <SEO
@@ -44,39 +49,61 @@ class About extends React.Component {
           path="about"
         />
         <div className={style.container}>
-          <div className={style.photo}>
-            <Img fluid={profilePhoto.childImageSharp.fluid} />
+          <div className={style.circularPortrait}>
+            <Img
+              fluid={profilePhoto.childImageSharp.fluid}
+              className="rounded-circle"
+            />
           </div>
           <div className={style.content}>
-            <h1>Hi, I'm Luigi!</h1>
-            <h2>Software Developer</h2>
-            <p>Per la versione italiana clicca qui</p>
-            <a href={Utils.resolvePageUrl('../', 'it', 'about')}>
-              <Img
-                fixed={flagIt.childImageSharp.fixed}
-                style={{ display: 'block', margin: 'auto' }}
-              />
-            </a>
+            <h1>Hey, I'm Will!</h1>
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur
-              cursus venenatis arcu, cursus pretium enim lacinia nec. Duis
-              viverra sagittis neque. Fusce non luctus urna. Vivamus suscipit
-              metus ac posuere egestas. Nunc a pulvinar purus. Vivamus nisi mi,
-              fringilla quis lacus et, sagittis mollis massa. Cras tempus massa
-              quis lobortis laoreet. Pellentesque metus odio, sagittis nec
-              venenatis non, maximus congue eros. Suspendisse pellentesque purus
-              sit amet ante commodo, et molestie mauris aliquet. Proin non nibh
-              libero. Fusce at nulla euismod, condimentum augue quis, convallis
-              justo.
+              I'm a senior at Northeastern University in Boston, Massachusetts, preparing
+              to graduate with a bachelor's degree in Computer Science and Game Development.
+              I spent a year at Wayfair as a data center engineering co-op, where I gained
+              a lot of great experience in Python scripting, DevOps, and Agile sprints. 
             </p>
-            <br />
-            <h2>Skills</h2>
-            <ImageList edges={skillIcons.edges} />
-            <h2>Tools</h2>
-            <ImageList edges={toolIcons.edges} />
+            <p>
+              In my time at Northeastern, I've been very involved with the games program.
+              I've been on the executive board of the game development club for 2 years, helping
+              coordinate meetings and arrange talks from prominent guest speakers. 
+              I also helped organize and run the 2020 Boston Global Game Jam at Northeastern,
+              which was one of the largest GGJ sites in North America. In 2021, I worked with program
+              coordinator Brandon Sichling on their game Habit of Force, which I helped prepare for
+              showcases at Tokyo Indies and the Boston Festival of Indie Games.
+            </p>
+            <div className={style.container}>
+              <div className={style.companyLogo}>
+                <Img
+                  fluid={wayfair.childImageSharp.fluid}
+                />
+              </div>
+              <div className={style.companyLogo}>
+                <Img
+                  fluid={nugdc.childImageSharp.fluid}
+                />
+              </div>
+              <div className={style.companyLogo}>
+                <Img
+                  fluid={hof.childImageSharp.fluid}
+                />
+              </div>
+            </div>
+            <p>
+              When it comes to game design, I'm most interested in building captivating worlds
+              and developing compelling stories and characters. This is particularly apparent in
+              my affinity for JRPGs like Persona, Xenoblade, and 13 Sentinels: Aegis Rim.
+              I also love getting lost in a game of Tetris, particularly in the VR masterpiece
+              that is Tetris Effect.
+            </p>
+            <p>
+              My other hobbies include relaxing with my dogs, watching the NBA, and streaming 
+              with my friends on Twitch. I also started learning Japanese recently, and I've been
+              known to play the clarinet at times. 
+            </p>
           </div>
         </div>
-      </Layout>
+      </Layout >
     )
   }
 }
@@ -122,6 +149,27 @@ class ImageList extends React.Component {
 export const query = graphql`
   {
     profilePhoto: file(name: { eq: "profile-photo" }) {
+      childImageSharp {
+        fluid(maxWidth: 800) {
+          ...GatsbyImageSharpFluid_tracedSVG
+        }
+      }
+    }
+    wayfair: file(name: { eq: "wayfair" }) {
+      childImageSharp {
+        fluid(maxWidth: 800) {
+          ...GatsbyImageSharpFluid_tracedSVG
+        }
+      }
+    }
+    nugdc: file(name: { eq: "nugdc" }) {
+      childImageSharp {
+        fluid(maxWidth: 800) {
+          ...GatsbyImageSharpFluid_tracedSVG
+        }
+      }
+    }
+    hof: file(name: { eq: "hof" }) {
       childImageSharp {
         fluid(maxWidth: 800) {
           ...GatsbyImageSharpFluid_tracedSVG
